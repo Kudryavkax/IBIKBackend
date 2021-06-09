@@ -4,6 +4,7 @@ import express from "express";
 // import function from controller
 import {showPengumuman,showPengumumanById,createPengumuman,updatePengumuman,deletePengumuman} from "../controllers/pengumuman.js";
 import {showLowongan,showLowonganById,createLowongan,deleteLowongan,updateLowongan} from "../controllers/lowongan.js";
+import {createAbsen,deleteAbsen,showAbsen,showAbsenById,updateAbsen,showAbsenByTanggal} from "../controllers/absensi.js";
 
 // init express router
 const router = express.Router();
@@ -23,6 +24,7 @@ router.put('/pengumuman/:id', updatePengumuman);
 // Delete Pengumuman
 router.delete('/pengumuman/:id', deletePengumuman);
 //-------------------------------
+
 //Lowongan-----------------------
 // Get All Lowongan
 router.get('/lowongan', showLowongan);
@@ -38,6 +40,26 @@ router.put('/lowongan/:id', updateLowongan);
  
 // Delete Lowongan
 router.delete('/lowongan/:id', deleteLowongan);
+//-------------------------------
+
+//Absen--------------------------
+// Get All Absen
+router.get('/absen', showAbsen);
+
+// Get Absen by ID
+router.get('/absenid/:id', showAbsenById);
+
+// Get Absen by Tanggal
+router.get('/absen/:id/:id2', showAbsenByTanggal);
+ 
+// Create New Absen
+router.post('/absen', createAbsen);
+ 
+// Update Absen
+router.put('/absen/:id', updateAbsen);
+ 
+// Delete Absen
+router.delete('/absen/:id', deleteAbsen);
 //-------------------------------
 // export default router
 export default router;
