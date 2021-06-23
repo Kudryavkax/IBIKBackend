@@ -5,6 +5,7 @@ import express from "express";
 import {showPengumuman,showPengumumanById,createPengumuman,updatePengumuman,deletePengumuman} from "../controllers/pengumuman.js";
 import {showLowongan,showLowonganById,createLowongan,deleteLowongan,updateLowongan} from "../controllers/lowongan.js";
 import {createAbsen,deleteAbsen,showAbsen,showAbsenById,updateAbsen,showAbsenByTanggal} from "../controllers/absensi.js";
+import {showPeriodeByStatus,showPeriode,showPeriodeById} from "../controllers/periode.js";
 
 // init express router
 const router = express.Router();
@@ -60,6 +61,17 @@ router.put('/absen/:id', updateAbsen);
  
 // Delete Absen
 router.delete('/absen/:id', deleteAbsen);
+//-------------------------------
+
+//Periode------------------------
+//Get Periode
+router.get('/periode', showPeriode);
+
+//Get Periode by Status
+router.get('/periode/status/:status', showPeriodeByStatus);
+
+//Get Periode by Id
+router.get('/periode/id/:id', showPeriodeById);
 //-------------------------------
 // export default router
 export default router;
